@@ -1,0 +1,28 @@
+.root {
+    -fx-background-color: #5C5C5C;
+}
+
+.main-button {
+    -fx-background-color: #494a4a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #494a4a;
+    -fx-border-width: 2px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+    -fx-min-height: 50px;
+}
+
+.main-button:hover {
+    -fx-background-color: #1B7593;
+    -fx-border-color: #1B7593;
+}
+
+.main-button:pressed {
+    -fx-background-color: #AA336A;
+}
+

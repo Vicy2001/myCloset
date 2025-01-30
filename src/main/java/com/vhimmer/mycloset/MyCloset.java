@@ -1,5 +1,7 @@
 package com.vhimmer.mycloset;
 
+import com.vhimmer.mycloset.Theme;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -7,6 +9,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MyCloset extends Application {
+    private static Scene primaryScene;
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Closet Manager");
@@ -32,14 +36,28 @@ public class MyCloset extends Application {
         VBox layout = new VBox(10, btnOutfits, btnClothes, btnNewClothes, btnSettings);
         layout.setStyle("-fx-alignment: center; -fx-padding: 20px;");
 
-        Scene scene = new Scene(layout, 300, 200);
+        primaryScene = new Scene(layout, 300, 250);
 
-        applyStyle(scene);
+        // apply theme
+        applyTheme(primaryScene);
 
-        primaryStage.setScene(scene);
+        primaryStage.setScene(primaryScene);
         primaryStage.show();
     }
 
+    public static void applyTheme(Scene scene) {
+        scene.getStylesheets().clear();
+        String cssPath = MyCloset.class.getResource(Theme.getCurrentTheme().getStylesheetPath()).toExternalForm();
+        if (cssPath != null) {
+            scene.getStylesheets().add(cssPath);
+        } else {
+            System.out.println("⚠ Fehler: Stylesheet konnte nicht geladen werden!");
+        }
+    }
+
+    public static Scene getPrimaryScene() {
+        return primaryScene;
+    }
 
     public static void main(String[] args) {
         launch();
