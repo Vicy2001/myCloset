@@ -9,7 +9,7 @@
     -fx-padding: 10px 20px;
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
-    -fx-border-color: #00001;
+    -fx-border-color: #00000;
     -fx-border-width: 2px;
     -fx-min-width: 200px;
     -fx-max-width: 200px;
@@ -18,6 +18,7 @@
 
 .main-button:hover {
     -fx-background-color: #1B7593;
+    -fx-border-color: #1B7593;
 }
 
 .main-button:pressed {

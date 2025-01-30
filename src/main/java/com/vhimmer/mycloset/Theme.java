@@ -1,20 +1,27 @@
 package com.vhimmer.mycloset;
 
-public class Theme {
-    public enum Style {
-        PINK("/styles/pink.css"),
-        BLUE("/styles/blue.css"),
-        LIGHT("/styles/light.css"),
-        DARK("/styles/dark.css");
+public enum Theme {
+    LIGHT("/light.css"),
+    DARK("/dark.css"),
+    BLUE("/blue.css"),
+    PINK("/pink.css");
 
-        private final String stylesheet;
+    private final String stylesheetPath;
+    private static Theme currentTheme = LIGHT;
 
-        Style(String stylesheet) {
-            this.stylesheet = stylesheet;
-        }
+    Theme(String stylesheetPath) {
+        this.stylesheetPath = stylesheetPath;
+    }
 
-        public String getStylesheet() {
-            return stylesheet;
-        }
+    public String getStylesheetPath() {
+        return stylesheetPath;
+    }
+
+    public static Theme getCurrentTheme() {
+        return currentTheme;
+    }
+
+    public static void setCurrentTheme(Theme theme) {
+        currentTheme = theme;
     }
 }

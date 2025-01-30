@@ -19,6 +19,7 @@
 
 .main-button:hover {
     -fx-background-color: #AA336A;
+    -fx-border-color: #AA336A;
 }
 
 .main-button:pressed {
